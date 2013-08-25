@@ -1,9 +1,12 @@
 #
 # node.js container
 #
-from quarry/base
-maintainer Kai Davenport
-run apt-get install -y python-software-properties make
-run add-apt-repository -y ppa:chris-lea/node.js
-run apt-get update
-run apt-get install -y nodejs
+from ubuntu
+MAINTAINER Kai Davenport
+RUN apt-get install -y python-software-properties python
+RUN add-apt-repository ppa:chris-lea/node.js
+RUN add-apt-repository -y ppa:chris-lea/zeromq
+RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install -y nodejs
+RUN apt-get install -y libzmq3 libzmq3-dev
