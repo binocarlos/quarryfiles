@@ -1,7 +1,6 @@
 #
 # redis server
 #
-from quarry/base
+from ubuntu
 MAINTAINER Kai Davenport
 run	apt-get -y install redis-server
-CMD ["redis-server"]

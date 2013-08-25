@@ -8,7 +8,3 @@ RUN echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
 RUN apt-get update
 RUN apt-get -y install apt-utils
 RUN apt-get -y install mongodb-10gen
-
-#RUN echo "" >> /etc/mongodb.conf
-
-CMD ["/usr/bin/mongod", "--config", "/etc/mongodb.conf"]
