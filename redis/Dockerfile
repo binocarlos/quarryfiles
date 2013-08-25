@@ -8,4 +8,4 @@ RUN apt-get update
 RUN apt-get install -y redis-server
 EXPOSE 6379
 VOLUME /Var/lib/redis
-CMD ["/usr/local/bin/redis-server"]
+CMD ["/usr/bin/redis-server"]

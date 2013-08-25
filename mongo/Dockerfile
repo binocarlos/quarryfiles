@@ -10,4 +10,4 @@ RUN apt-get -y install apt-utils
 RUN apt-get -y install mongodb-10gen
 EXPOSE 27017
 VOLUME /db/data
-CMD ["/usr/local/bin/mongod"]
+CMD ["/usr/bin/mongod"]
