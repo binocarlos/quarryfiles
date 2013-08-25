@@ -3,4 +3,6 @@
 #
 from ubuntu
 MAINTAINER Kai Davenport
-run	apt-get -y install redis-server
+RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install -y nodejs
