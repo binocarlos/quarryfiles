@@ -4,3 +4,4 @@
 from quarry/base
 MAINTAINER Kai Davenport
 run	apt-get -y install redis-server
+CMD ["redis-server"]
