@@ -1,0 +1,2 @@
+all:
+	./builddockerfile all

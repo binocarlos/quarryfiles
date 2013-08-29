@@ -21,4 +21,4 @@ add	./config.json /usr/local/lib/node_modules/hipache/config/config.json
 expose	80
 expose	6379
 # we are preparing the container so don't run it yet
-#cmd	["supervisord", "-n"]
+cmd	["supervisord", "-n"]

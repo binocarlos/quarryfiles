@@ -1,0 +1,43 @@
+#!/bin/bash
+set -e
+
+images=( hipache mongo redis node etcd )
+
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
+# check that we have docker installed
+#test -n `docker version` || echo "docker must be installed" 1>&2 && exit;
+docker version >/dev/null 2>&1 || { echo >&2 "I require docker but it's not installed.  Aborting."; exit 1; }
+# build a single docker file
+
+function install_image {
+	# we surpress output for the hipache container cos it breaks otherwise
+	flags=""
+	if [ "$1" = 'hipache' ]; then
+		flags=" -q"
+	fi
+	echo "building image $1"
+	docker build $flags -t quarry/$1 dockerfiles/$1
+}
+
+case "$1" in
+  all)
+		# check for the install folder otherwise clone & build
+		for IMAGE in "${images[@]}"
+		do
+		  install_image $IMAGE
+		done
+		;;
+
+	*)
+		if [ -z $1 ]; then
+			echo "Please specifiy a file to build" 1>&2
+   		exit 1
+		fi
+		install_image $1
+		;;
+esac
+

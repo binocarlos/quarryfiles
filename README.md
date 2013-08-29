@@ -3,33 +3,25 @@ quarryfiles
 
 Dockerfiles used for booting a quarry stack
 
-## base
-
-an image that setups Ubuntu with an update + git, make, build-essential + supervisor
-
 ## hipache
 
-a standalone image running node 8, redis and hipache
-we control the whole network HTTP via this container
+used for HTTP proxy
 
 ## mongo
 
-base + mongo server
-we run this with a data volume back onto the host
+base mongo installation - used for warehouses
 
 ## redis
 
-base + redis server
-this is for website sessions and redis warehouses
-we run this with a data volume back onto the host
+redis - used for the cache
 
 ## node
 
-base + nodejs
+node + zeromq + build_essential (for npm installs)
 
-## zeronode
+## etcd
 
-node + zeromq
+etcd deamon for naming
 
 ## licence
 
