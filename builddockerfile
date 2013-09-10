@@ -20,6 +20,7 @@ function install_image {
 	#flags=" -q"
 	flags=""
 	echo "building image $1"
+	docker rmi `docker images | grep quarry/$1 | awk '{print $3}'`
 	docker build $flags -t quarry/$1 dockerfiles/$1
 }
 

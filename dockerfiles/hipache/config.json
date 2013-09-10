@@ -1,8 +1,8 @@
 {
     "server": {
-        "accessLog": "/var/log/nginx/access.log",
+        "accessLog": "/var/log/hipache.log",
         "port": 80,
-        "workers": 10,
+        "workers": 3,
         "maxSockets": 100,
         "deadBackendTTL": 30,
         "tcpTimeout": 30,
