@@ -1,4 +1,4 @@
-from quarry/node
+from quarrystack/node
 
 # have a nice fresh folder for any digger app
 RUN mkdir -p /srv/quarryapp
