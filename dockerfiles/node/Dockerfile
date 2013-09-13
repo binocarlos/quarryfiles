@@ -1,5 +1,14 @@
-from ubuntu
-run	echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-run	apt-get -y update
-run	apt-get -y install wget git
-run	wget -O - http://nodejs.org/dist/v0.8.23/node-v0.8.23-linux-x64.tar.gz | tar -C /usr/local/ --strip-components=1 -zxv
+FROM ubuntu:12.04
+
+# Update package repository
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe multiverse" > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
+
+# Required packages
+RUN apt-get install -y curl software-properties-common python python-software-properties g++ make
+
+# Init node.js
+RUN add-apt-repository -y ppa:chris-lea/node.js
+RUN apt-get update
+RUN apt-get install -y nodejs
