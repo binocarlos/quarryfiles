@@ -3,6 +3,9 @@ from quarrystack/node
 # have a nice fresh folder for any digger app
 RUN mkdir -p /srv/quarryapp
 
+# force the re-install if we have upgraded sub modules but not digger itself
+run echo "bump" > /tmp/bump
+
 # lets have a chunky JCB
 run npm install -g digger@1.2.19
 

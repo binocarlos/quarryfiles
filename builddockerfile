@@ -8,7 +8,7 @@ set -e
 # I am gets it wrong at each and every turn - much like this 3 line comment that
 # a) has said not a lot and
 # b) has now become 5 lines
-images=( hipache etcd mongo redis node digger )
+images=( etcd mongo redis node digger )
 
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
