@@ -1,4 +1,4 @@
-from ubuntu
+FROM ubuntu:12.04
 run	echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 run	apt-get -y update
 
