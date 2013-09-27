@@ -7,7 +7,7 @@ RUN mkdir -p /srv/quarryapp
 run echo "bump7" > /tmp/bump
 
 # lets have a chunky JCB
-run npm install -g digger@1.2.22
+run npm install -g digger@1.2.23
 
 # mongroup so we can keep things spinning
 run (mkdir /tmp/mon && cd /tmp/mon && curl -L# https://github.com/visionmedia/mon/archive/master.tar.gz | tar zx --strip 1 && make install)
